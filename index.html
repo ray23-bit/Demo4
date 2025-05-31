@@ -1,0 +1,306 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizqi O AI Image Generator Pro - Create Stunning AI Art with Advanced Controls</title>
+    <meta name="description" content="Generate ultra-high quality AI images with Rizqi O AI Pro. Advanced controls, prompt enhancement, and professional features for stunning results.">
+    <meta name="keywords" content="AI image generator pro, Rizqi O AI, advanced AI art, stable diffusion XL, DALL-E 3, professional AI tools">
+    <meta name="author" content="Rizqi O AI Pro">
+    <meta property="og:title" content="Rizqi O AI Image Generator Pro">
+    <meta property="og:description" content="Professional-grade AI image generation with advanced controls">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dark/Light mode switch -->
+    <div class="theme-switch">
+        <button class="theme-switch-btn" id="themeToggle">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Rizqi O AI Image Generator <span class="pro-badge">Pro</span></h1>
+                <p class="subtitle">Create ultra-high quality AI images with advanced controls and professional features</p>
+            </div>
+        </header>
+        
+        <div class="generator-container">
+            <div class="control-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Generation Controls</span>
+                    </div>
+                    <button class="btn-icon" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-group-header">
+                        <label for="prompt" class="label-with-tooltip">
+                            <span>Image Description</span>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle tooltip-icon"></i>
+                                <span class="tooltip-text">Describe what you want to generate in detail. The more specific, the better the results.</span>
+                            </div>
+                        </label>
+                        <button class="enhance-prompt-btn" id="enhancePromptBtn" title="Enhance Prompt">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </button>
+                    </div>
+                    <textarea id="prompt" rows="4" placeholder="A beautiful landscape at sunset with mountains in the background, vibrant colors, cinematic lighting, 8k ultra detailed..."></textarea>
+                    <div class="suggestions-container" id="suggestionsContainer">
+                        <div class="suggestion-category">Popular Prompts</div>
+                        <div class="suggestion-item">Cyberpunk City</div>
+                        <div class="suggestion-item">Fantasy Castle</div>
+                        <div class="suggestion-item">Wizard Portrait</div>
+                        <div class="suggestion-category">Art Styles</div>
+                        <div class="suggestion-item">Oil Painting</div>
+                        <div class="suggestion-item">Anime</div>
+                        <div class="suggestion-item">Pixel Art</div>
+                        <div class="suggestion-category">Advanced Styles</div>
+                        <div class="suggestion-item">Brutalism</div>
+                        <div class="suggestion-item">Hyper-Realism</div>
+                        <div class="suggestion-item">Macabre</div>
+                        <div class="suggestion-item">Moulting Effect</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="negative-prompt" class="label-with-tooltip">
+                        <span>Negative Prompt</span>
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle tooltip-icon"></i>
+                            <span class="tooltip-text">Specify what you don't want to appear in the image (e.g., blurry, text, deformed).</span>
+                        </div>
+                    </label>
+                    <textarea id="negative-prompt" rows="2" placeholder="blurry, low quality, text, watermark, deformed, extra limbs"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="model">AI Model</label>
+                    <select id="model">
+                        <option value="stable-diffusion-xl">Stable Diffusion XL 1.0 (Recommended)</option>
+                        <option value="dall-e-3">DALL-E 3 (Premium)</option>
+                        <option value="kandinsky-2">Kandinsky 2.2</option>
+                        <option value="midjourney-v5">Midjourney V5 Style</option>
+                        <option value="real-esrgan">Real-ESRGAN (Upscaling)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aspect-ratio">Aspect Ratio</label>
+                    <select id="aspect-ratio">
+                        <option value="1:1">1:1 (1024x1024)</option>
+                        <option value="9:16">9:16 (768x1365)</option>
+                        <option value="16:9">16:9 (1365x768)</option>
+                        <option value="4:3">4:3 (1024x768)</option>
+                        <option value="3:4">3:4 (768x1024)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="style">Style</label>
+                    <select id="style">
+                        <option value="realistic">Photorealistic</option>
+                        <option value="digital-art">Digital Art</option>
+                        <option value="fantasy-art">Fantasy Art</option>
+                        <option value="anime">Anime</option>
+                        <option value="oil-painting">Oil Painting</option>
+                        <option value="watercolor">Watercolor</option>
+                        <option value="pixel-art">Pixel Art</option>
+                        <option value="low-poly">Low Poly</option>
+                        <option value="isometric">Isometric</option>
+                        <option value="cyberpunk">Cyberpunk</option>
+                        <option value="steampunk">Steampunk</option>
+                        <option value="surrealism">Surrealism</option>
+                        <option value="abstract">Abstract</option>
+                        <option value="minimalist">Minimalist</option>
+                        <option value="vaporwave">Vaporwave</option>
+                        <option value="synthwave">Synthwave</option>
+                        <option value="brutalism">Brutalism</option>
+                        <option value="hyper-realism">Hyper-Realism</option>
+                        <option value="macabre">Macabre</option>
+                        <option value="moulting-effect">Moulting Effect</option>
+                        <option value="salvador-dali">Salvador Dali</option>
+                        <option value="pablo-picasso">Pablo Picasso</option>
+                        <option value="vincent-van-gogh">Vincent Van Gogh</option>
+                        <option value="h-r-giger">H.R. Giger</option>
+                        <option value="zdislav-beksinski">Zdislav Beksiński</option>
+                        <option value="hieronymus-bosch">Hieronymus Bosch</option>
+                        <option value="frida-kahlo">Frida Kahlo</option>
+                        <option value="banksy">Banksy</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="effect">Special Effect</label>
+                    <select id="effect">
+                        <option value="">None</option>
+                        <option value="bokeh">Bokeh</option>
+                        <option value="bloom">Bloom</option>
+                        <option value="glitch">Glitch</option>
+                        <option value="holographic">Holographic</option>
+                        <option value="neon-glow">Neon Glow</option>
+                        <option value="double-exposure">Double Exposure</option>
+                        <option value="tilt-shift">Tilt-Shift</option>
+                        <option value="film-grain">Film Grain</option>
+                        <option value="vignette">Vignette</option>
+                        <option value="chromatic-aberration">Chromatic Aberration</option>
+                        <option value="light-leaks">Light Leaks</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="toggle-label">
+                        <span>NSFW Content</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="nsfwToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </label>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Enable to allow mature content generation (18+ only)
+                    </p>
+                </div>
+                
+                <div class="advanced-panel" id="advancedPanel">
+                    <div class="advanced-header">
+                        <span>Advanced Settings</span>
+                        <i class="fas fa-chevron-down advanced-toggle"></i>
+                    </div>
+                    <div class="advanced-content">
+                        <div class="form-group">
+                            <label for="seed">Seed (Optional)</label>
+                            <input type="number" id="seed" placeholder="Leave blank for random">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="steps">Generation Steps</label>
+                            <div class="slider-container">
+                                <div class="slider-labels">
+                                    <span>Faster</span>
+                                    <span>Quality</span>
+                                </div>
+                                <input type="range" min="30" max="100" value="50" class="slider" id="steps">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cfg-scale">Creativity Scale</label>
+                            <div class="slider-container">
+                                <div class="slider-labels">
+                                    <span>Strict</span>
+                                    <span>Creative</span>
+                                </div>
+                                <input type="range" min="1" max="20" value="7" class="slider" id="cfg-scale">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quality">Quality Boost</label>
+                            <div class="slider-container">
+                                <div class="slider-labels">
+                                    <span>Standard</span>
+                                    <span>Ultra HD</span>
+                                </div>
+                                <input type="range" min="0" max="2" value="1" step="0.1" class="slider" id="quality">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="generate-btn">
+                    <i class="fas fa-magic"></i> Generate Image
+                </button>
+                
+                <button id="generate-multi-btn">
+                    <i class="fas fa-images"></i> Generate 4 Styles
+                </button>
+                
+                <button class="btn-secondary" id="reset-btn">
+                    <i class="fas fa-undo"></i> Reset Settings
+                </button>
+
+                <button class="btn-secondary" id="regenerate-button">
+                    <i class="fas fa-rotate"></i> Regenerate Image
+                </button>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-header">
+                    <div class="gallery-title">
+                        <i class="fas fa-images"></i>
+                        <span>Generated Images</span>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="btn-icon" id="clear-gallery-btn" title="Clear All">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="btn-icon" id="download-all-btn" title="Download All">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Multi-image grid -->
+                <div class="multi-image-grid" id="multi-image-grid" style="display: none;">
+                    <div class="image-item">
+                        <div class="loading" style="width: 30px; height: 30px;"></div>
+                    </div>
+                    <div class="image-item">
+                        <div class="loading" style="width: 30px; height: 30px;"></div>
+                    </div>
+                    <div class="image-item">
+                        <div class="loading" style="width: 30px; height: 30px;"></div>
+                    </div>
+                    <div class="image-item">
+                        <div class="loading" style="width: 30px; height: 30px;"></div>
+                    </div>
+                </div>
+                
+                <!-- Single image gallery -->
+                <div class="gallery" id="gallery">
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-image"></i>
+                        <h3>No images generated yet</h3>
+                        <p>Your AI-generated masterpieces will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading" id="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div>
+                <h3 class="loading-title">Generating Your Image</h3>
+                <p class="loading-subtitle">This may take a few moments...</p>
+            </div>
+            <div class="loading-details" id="loadingDetails">
+                Initializing AI model...
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification element -->
+    <div class="notification" id="notification">
+        <div class="notification-icon" id="notificationIcon"></div>
+        <div class="notification-content" id="notificationContent"></div>
+        <div class="notification-close" id="notificationClose">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
