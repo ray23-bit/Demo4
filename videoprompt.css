@@ -1,0 +1,235 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0e5ec;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Neumorphic Container */
+.prompt-generator-container {
+  width: 100%;
+  max-width: 800px;
+  background: #e0e5ec;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 
+    8px 8px 15px #a3b1c6, 
+    -8px -8px 15px #ffffff;
+}
+
+.title {
+  text-align: center;
+  color: #4a5568;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #a3b1c6, -1px -1px 2px #ffffff;
+}
+
+.description {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* Form Sections */
+.section {
+  background: #e0e5ec;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 
+    inset 3px 3px 5px #a3b1c6, 
+    inset -3px -3px 5px #ffffff;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.input-group input[type="text"],
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ec;
+  box-shadow: 
+    inset 3px 3px 5px #a3b1c6, 
+    inset -3px -3px 5px #ffffff;
+  font-size: 14px;
+  color: #4a5568;
+  transition: all 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  outline: none;
+  box-shadow: 
+    inset 1px 1px 3px #a3b1c6, 
+    inset -1px -1px 3px #ffffff;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.input-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+/* Advanced Options */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.toggle {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle + label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 50px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.toggle + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 20px;
+  background: #e0e5ec;
+  border-radius: 10px;
+  box-shadow: 
+    inset 3px 3px 5px #a3b1c6, 
+    inset -3px -3px 5px #ffffff;
+  transition: all 0.3s;
+}
+
+.toggle + label:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 
+    1px 1px 2px #a3b1c6;
+  transition: all 0.3s;
+}
+
+.toggle:checked + label:after {
+  left: calc(100% - 18px);
+  background: #4a5568;
+}
+
+.advanced-content {
+  display: none;
+  padding-top: 15px;
+}
+
+/* Buttons */
+.generate-button,
+.copy-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ec;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 
+    5px 5px 10px #a3b1c6, 
+    -5px -5px 10px #ffffff;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.copy-button {
+  margin-top: 10px;
+  background: #4a5568;
+  color: #fff;
+  box-shadow: 
+    5px 5px 10px #a3b1c6;
+}
+
+.generate-button:hover,
+.copy-button:hover {
+  transform: translateY(-2px);
+}
+
+.generate-button:active,
+.copy-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    inset 3px 3px 5px #a3b1c6, 
+    inset -3px -3px 5px #ffffff;
+}
+
+/* Output Section */
+.output-group {
+  margin-top: 20px;
+}
+
+.output-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ec;
+  box-shadow: 
+    inset 3px 3px 5px #a3b1c6, 
+    inset -3px -3px 5px #ffffff;
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .prompt-generator-container {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
+}
